@@ -30,15 +30,13 @@
 	        }, 
 	    "id": null
 	}
-### 比如我们可以在多行文本框里输入一段代码,来一个Java版本的HelloWorld吧
-    public class HelloWorld {
+	
+###### 五. 服务端所有的响应格式为:
 
-      /**
-      * @param args
-	    */
-	    public static void main(String[] args) {
-		    System.out.println("HelloWorld!");
-
-	    }
-
-    }
+	{   
+	    "code": -32600, 
+	    "message": "Invalid Request", 
+	    "data":{ }
+	}
+	
+它们的含义分别代表：code为0代表调用成功，其他会自定义的错误码；message表示在API调用失败的情况下详细的错误信息，这个信息可以由客户端直接呈现给用户，否则为空；data表示服务端返回的数据，具体格式由服务端自定义，API调用错误为空
